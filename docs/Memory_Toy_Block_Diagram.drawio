@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram name="Page-1" id="73b4qJ1EcwIeh1RjLj8o">
+    <mxGraphModel dx="1213" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-1" parent="1" style="shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.dual_inline_ic;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t;whiteSpace=wrap;" value="IC" vertex="1">
+          <mxGeometry height="140" width="200" x="450" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-3" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;fillColor=strokeColor;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.electrical.miscellaneous.monocell_battery;rotation=-90;" value="" vertex="1">
+          <mxGeometry height="60" width="100" x="510" y="665" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-4" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="400" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-5" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="200" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-6" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="600" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-7" parent="1" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.opto_electronics.led_2;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="70" width="100" x="800" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-8" parent="1" style="html=1;shape=mxgraph.electrical.electro-mechanical.pushbutton;aspect=fixed;elSwitchState=off;" value="" vertex="1">
+          <mxGeometry height="20" width="75" x="362.5" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-9" parent="1" style="html=1;shape=mxgraph.electrical.electro-mechanical.pushbutton;aspect=fixed;elSwitchState=off;" value="" vertex="1">
+          <mxGeometry height="20" width="75" x="362.5" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-10" parent="1" style="html=1;shape=mxgraph.electrical.electro-mechanical.pushbutton;aspect=fixed;elSwitchState=off;" value="" vertex="1">
+          <mxGeometry height="20" width="75" x="662.5" y="475" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-11" parent="1" style="html=1;shape=mxgraph.electrical.electro-mechanical.pushbutton;aspect=fixed;elSwitchState=off;" value="" vertex="1">
+          <mxGeometry height="20" width="75" x="662.5" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-12" parent="1" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.signal_ground;" value="" vertex="1">
+          <mxGeometry height="30" width="45" x="840" y="405" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-13" parent="1" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.electro-mechanical.piezo_sounder;pointerEvents=1;" value="" vertex="1">
+          <mxGeometry height="40" width="100" x="150" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="NxdBXADuOaWLeYwvg-ma-14" parent="1" style="shadow=0;dashed=0;align=center;html=1;strokeWidth=1;shape=mxgraph.electrical.logic_gates.dual_inline_ic;labelNames=a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t;whiteSpace=wrap;rotation=-90;" value="IC" vertex="1">
+          <mxGeometry height="90" width="100" x="150" y="410" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

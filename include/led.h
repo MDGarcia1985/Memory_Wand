@@ -1,33 +1,35 @@
-#pragma once
 /*
- * This is for LEDs implimentation and logic that is then passed to main.cpp through headers.h
- * This project is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This project is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY;
- * 
- * Author:  Michael Garcia
- * Email:   michael@mandedesign.studio
- * website: https://mandedesign.studio
- * Date:    2026-04-11
- * Version: 1.0
-*/
+ * Author: Michael Garcia, M&E Design
+ * License: MIT
+ * Date: 2026-04-17
+ * Contact: michael@mandedesign.studio
+ * Website: https://mandedesign.studio
+ */
+
+#pragma once
+
 #include <stdint.h>
 
+class LedDriver595;
+
+/**
+ * Semantic LED wrapper that owns non-blocking blink state while delegating
+ * physical output to a backend driver.
+ */
 class Led {
 public:
     Led();
-    // unit8_t is C++'s way of saying unsigned char. It allows the system to use a byte as a variable.
-    void begin(uint8_t pin, bool activeHigh = true);
+
+    /**
+     * For 74HC595-backed LEDs, ledIndex is the register bit index (0-7), not
+     * a raw MCU GPIO number.
+     */
+    void begin(uint8_t ledIndex, LedDriver595* driver, bool activeHigh = true);
 
     void on();
     void off();
     void toggle();
 
-    // uint32_t is C++'s way of saying unsigned int. It allows the system to use a 32 bit integer as a variable.
     void blink(uint32_t onMs, uint32_t offMs);
     void stopBlink();
 
@@ -37,11 +39,11 @@ public:
     bool isBlinking() const;
 
 private:
-    uint8_t pin_;
+    uint8_t ledIndex_;
+    LedDriver595* driver_;
     bool activeHigh_;
     bool state_;
     bool blinking_;
-
     uint32_t onMs_;
     uint32_t offMs_;
     uint32_t lastChangeMs_;

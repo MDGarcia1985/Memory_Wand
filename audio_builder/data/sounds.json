@@ -1,0 +1,6 @@
+[
+  { "id": "Startup", "pattern": "startup", "channel": 0, "priority": 10, "loop": false },
+  { "id": "ButtonPress", "pattern": "button_press", "channel": 0, "priority": 20, "loop": false },
+  { "id": "ButtonRelease", "pattern": "button_release", "channel": 0, "priority": 15, "loop": false },
+  { "id": "ButtonHold", "pattern": "button_hold", "channel": 0, "priority": 30, "loop": false }
+]

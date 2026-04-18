@@ -1,22 +1,29 @@
+/*
+ * Author: Michael Garcia, M&E Design
+ * License: MIT
+ * Date: 2026-04-17
+ * Contact: michael@mandedesign.studio
+ * Website: https://mandedesign.studio
+ */
+
 #pragma once
 
-/*
- * This is the main header file for the project. It routes all the other headers to be included in the projec to main.cpp.
- *This project is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This project is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY;
- * 
- * Author:  Michael Garcia
- * Email:   michael@mandedesign.studio
- * website: https://mandedesign.studio
- * Date:    2026-04-11
- * Version: 1.0
-*/
+/**
+ * Aggregated include for the firmware application entry point.
+ * Modules should usually include only the headers they directly need.
+ */
 
-
-#include "ButtonDebounce.h"
+#include "audio/AudioConfig.h"
+#include "audio/AudioOutput.h"
+#include "audio/AudioTypes.h"
+#include "audio/GeneratedSoundData.h"
+#include "audio/IAudioDriver.h"
+#include "btn_debounce.h"
+#include "btn_event.h"
+#include "config.h"
+#include "drivers/LedDriver595.h"
+#include "event_queue.h"
+#include "glbl_context.h"
 #include "led.h"
+#include "pins.h"
+#include "tasks.h"

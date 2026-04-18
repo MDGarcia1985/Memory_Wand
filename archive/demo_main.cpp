@@ -1,19 +1,11 @@
-/* Simple Arduino Memory Game (Simon Says style)
- * 4 buttons (pins 2-5: Red, Yellow, Green, Blue)
- * 4 LEDs (pins 6-9: Red, Yellow, Green, Blue)
- * Piezo buzzer on pin 10
- *
- * Button front end:
- * Each button is hardware-debounced using a Jack Ganssle-style RC network
- * and then passed through an inverting Schmitt trigger (74HC14 or CD40106).
- *
- * Final GPIO behavior:
- * - Idle button state at MCU input = LOW
- * - Pressed button state at MCU input = HIGH
- *
- * Because the external conditioning defines the logic state, the GPIO pins
- * are configured as INPUT, not INPUT_PULLUP.
+/*
+ * Author: Michael Garcia, M&E Design
+ * License: MIT
+ * Date: 2026-04-17
+ * Contact: michael@mandedesign.studio
+ * Website: https://mandedesign.studio
  */
+
 #include <Arduino.h>
 #include <stdint.h>
 

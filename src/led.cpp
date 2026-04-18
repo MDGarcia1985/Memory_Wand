@@ -1,36 +1,30 @@
 /*
- * This is for LEDs implimentation and logic that is then passed to main.cpp through headers.h
- * This project is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This project is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY;
- * 
- * Author:  Michael Garcia
- * Email:   michael@mandedesign.studio
- * website: https://mandedesign.studio
- * Date:    2026-04-11
- * Version: 1.0
-*/
+ * Author: Michael Garcia, M&E Design
+ * License: MIT
+ * Date: 2026-04-17
+ * Contact: michael@mandedesign.studio
+ * Website: https://mandedesign.studio
+ */
+
 #include "led.h"
+#include "drivers/LedDriver595.h"
 #include <Arduino.h>
 
 Led::Led()
-    : pin_(255),
+    : ledIndex_(255),
+      driver_(nullptr),
       activeHigh_(true),
       state_(false),
       blinking_(false),
-      // Initialize to known safe state (0) to prevent undefined timing behavior.
+      // Known start state to avoid undefined behavior before configuration.
       onMs_(0),
       offMs_(0),
       lastChangeMs_(0) {}
 
-void Led::begin(uint8_t pin, bool activeHigh) {
-    pin_ = pin;
+void Led::begin(uint8_t ledIndex, LedDriver595* driver, bool activeHigh) {
+    ledIndex_ = ledIndex;
+    driver_ = driver;
     activeHigh_ = activeHigh;
-    pinMode(pin_, OUTPUT);
     off();
 }
 
@@ -72,6 +66,10 @@ void Led::update() {
     uint32_t now = millis();
     uint32_t interval = state_ ? onMs_ : offMs_;
 
+    if (interval == 0) {
+        return;
+    }
+
     if (now - lastChangeMs_ >= interval) {
         state_ = !state_;
         lastChangeMs_ = now;
@@ -88,10 +86,10 @@ bool Led::isBlinking() const {
 }
 
 void Led::writePin(bool on) {
-    if (pin_ == 255) {
+    if (driver_ == nullptr || ledIndex_ == 255) {
         return;
     }
 
     bool level = activeHigh_ ? on : !on;
-    digitalWrite(pin_, level ? HIGH : LOW);
+    driver_->setLed(ledIndex_, level);
 }

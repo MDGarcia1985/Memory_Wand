@@ -1,3 +1,11 @@
+<!--
+Author: Michael Garcia, M&E Design
+License: MIT
+Date: 2026-04-17
+Contact: michael@mandedesign.studio
+Website: https://mandedesign.studio
+-->
+
 # ARCHITECTURE.md
 
 ## Overview
@@ -23,21 +31,21 @@ The system is designed to be:
 
 ```
 [ ButtonDebounce (lib) ]
-            ↓
+            â†“
       btn_debounce
-            ↓
+            â†“
         btn_event
-            ↓
+            â†“
        event_queue
-            ↓
+            â†“
           tasks
         /       \
      led       audio
-                  ↓
+                  â†“
            AudioOutput
-                  ↓
+                  â†“
            IAudioDriver
-                  ↓
+                  â†“
              Hardware
 ```
 
@@ -47,63 +55,63 @@ The system is designed to be:
 
 ```
 project/
-├─ docs/
-│  ├─ API.md
-│  ├─ ARCHITECTURE.md
-│  ├─ NM_CON.md
-│  └─ COMMENTS.md
-│
-├─ include/
-│  ├─ headers.h
-│  ├─ config.h
-│  ├─ pins.h
-│  ├─ glbl_context.h
-│  ├─ event_queue.h
-│  ├─ tasks.h
-│  ├─ led.h
-│  ├─ btn_event.h
-│  ├─ btn_debounce.h
-│  │
-│  └─ audio/
-│     ├─ AudioTypes.h
-│     ├─ AudioConfig.h
-│     ├─ IAudioDriver.h
-│     ├─ AudioOutput.h
-│     ├─ GeneratedSoundData.h
-│     └─ drivers/
-│        ├─ AudioDriver_ESP32.h
-│        ├─ AudioDriver_RP2350.h
-│        └─ AudioDriver_Null.h
-│
-├─ src/
-│  ├─ main.cpp
-│  ├─ config.cpp
-│  ├─ pins.cpp
-│  ├─ glbl_context.cpp
-│  ├─ event_queue.cpp
-│  ├─ tasks.cpp
-│  ├─ led.cpp
-│  ├─ btn_event.cpp
-│  ├─ btn_debounce.cpp
-│  │
-│  └─ audio/
-│     ├─ AudioOutput.cpp
-│     ├─ GeneratedSoundData.cpp
-│     └─ drivers/
-│        ├─ AudioDriver_ESP32.cpp
-│        ├─ AudioDriver_RP2350.cpp
-│        └─ AudioDriver_Null.cpp
-│
-├─ audio_builder/
-│  ├─ data/
-│  │  ├─ note_map.json
-│  │  ├─ melodies.json
-│  │  └─ sounds.json
-│  └─ scripts/
-│     └─ build_audio.py
-│
-└─ lib/
-   └─ ButtonDebounce/
+â”œâ”€ docs/
+â”‚  â”œâ”€ API.md
+â”‚  â”œâ”€ ARCHITECTURE.md
+â”‚  â”œâ”€ NM_CON.md
+â”‚  â””â”€ COMMENTS.md
+â”‚
+â”œâ”€ include/
+â”‚  â”œâ”€ headers.h
+â”‚  â”œâ”€ config.h
+â”‚  â”œâ”€ pins.h
+â”‚  â”œâ”€ glbl_context.h
+â”‚  â”œâ”€ event_queue.h
+â”‚  â”œâ”€ tasks.h
+â”‚  â”œâ”€ led.h
+â”‚  â”œâ”€ btn_event.h
+â”‚  â”œâ”€ btn_debounce.h
+â”‚  â”‚
+â”‚  â””â”€ audio/
+â”‚     â”œâ”€ AudioTypes.h
+â”‚     â”œâ”€ AudioConfig.h
+â”‚     â”œâ”€ IAudioDriver.h
+â”‚     â”œâ”€ AudioOutput.h
+â”‚     â”œâ”€ GeneratedSoundData.h
+â”‚     â””â”€ drivers/
+â”‚        â”œâ”€ AudioDriver_ESP32.h
+â”‚        â”œâ”€ AudioDriver_RP2350.h
+â”‚        â””â”€ AudioDriver_Null.h
+â”‚
+â”œâ”€ src/
+â”‚  â”œâ”€ main.cpp
+â”‚  â”œâ”€ config.cpp
+â”‚  â”œâ”€ pins.cpp
+â”‚  â”œâ”€ glbl_context.cpp
+â”‚  â”œâ”€ event_queue.cpp
+â”‚  â”œâ”€ tasks.cpp
+â”‚  â”œâ”€ led.cpp
+â”‚  â”œâ”€ btn_event.cpp
+â”‚  â”œâ”€ btn_debounce.cpp
+â”‚  â”‚
+â”‚  â””â”€ audio/
+â”‚     â”œâ”€ AudioOutput.cpp
+â”‚     â”œâ”€ GeneratedSoundData.cpp
+â”‚     â””â”€ drivers/
+â”‚        â”œâ”€ AudioDriver_ESP32.cpp
+â”‚        â”œâ”€ AudioDriver_RP2350.cpp
+â”‚        â””â”€ AudioDriver_Null.cpp
+â”‚
+â”œâ”€ audio_builder/
+â”‚  â”œâ”€ data/
+â”‚  â”‚  â”œâ”€ note_map.json
+â”‚  â”‚  â”œâ”€ melodies.json
+â”‚  â”‚  â””â”€ sounds.json
+â”‚  â””â”€ scripts/
+â”‚     â””â”€ build_audio.py
+â”‚
+â””â”€ lib/
+   â””â”€ ButtonDebounce/
 ```
 
 ---
@@ -206,7 +214,7 @@ https://github.com/MDGarcia1985/buttonDebounce
 ### Architecture
 
 ```
-SoundID → SoundDef → AudioOutput → IAudioDriver → Hardware
+SoundID â†’ SoundDef â†’ AudioOutput â†’ IAudioDriver â†’ Hardware
 ```
 
 ---
@@ -266,9 +274,9 @@ No platform-specific logic above this layer.
 
 Platform-specific implementations:
 
-* AudioDriver_ESP32 → PWM via LEDC
-* AudioDriver_RP2350 → PWM slice control
-* AudioDriver_Null → no-op (testing)
+* AudioDriver_ESP32 â†’ PWM via LEDC
+* AudioDriver_RP2350 â†’ PWM slice control
+* AudioDriver_Null â†’ no-op (testing)
 
 ---
 
@@ -294,7 +302,7 @@ Separates editable sound data from embedded runtime.
 ### Flow
 
 ```
-JSON → Python Builder → Generated C++ → Firmware
+JSON â†’ Python Builder â†’ Generated C++ â†’ Firmware
 ```
 
 ---
@@ -303,7 +311,7 @@ JSON → Python Builder → Generated C++ → Firmware
 
 #### note_map.json
 
-Defines note → frequency mapping
+Defines note â†’ frequency mapping
 
 #### melodies.json
 
@@ -379,7 +387,7 @@ Maps:
 
 * Multi-channel audio mixing
 * Volume envelopes (ADSR)
-* MIDI import → builder pipeline
+* MIDI import â†’ builder pipeline
 * SD card sound loading
 * RTOS task scheduling
 * Visual debugging tools
